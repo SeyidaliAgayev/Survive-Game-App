@@ -19,8 +19,7 @@ public class DecrementThread implements Runnable{
     public void run() {
         while (true) {
             try {
-                Thread.sleep(4000);
-                synchronized (gamer) {
+                Thread.sleep(1000);
                     decrementFoodLevel(gamer);
                     decrementDrinkLevel(gamer);
 
@@ -31,7 +30,6 @@ public class DecrementThread implements Runnable{
                         System.err.println("YOU DEAD!");
                         System.exit(-1);
                     }
-                }
             } catch (InterruptedException exception) {
                 throw new RuntimeException(exception);
             }
